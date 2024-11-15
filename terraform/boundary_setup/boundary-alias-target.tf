@@ -5,5 +5,4 @@ resource "boundary_alias_target" "ssh_alias_target" {
   scope_id                  = "global"
   value                     = "my.app.boundary"
   destination_id            = boundary_target.ssh_foo.id
-  authorize_session_host_id = boundary_host_set_plugin.aws_host_set_demo.id
 }
