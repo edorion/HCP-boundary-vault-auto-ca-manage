@@ -3,16 +3,16 @@ Framework to use HCP tooling to manage AMI's CA auth from boundary via vault dri
 
 ## Outcomes:
 This configures:
-- HCP Vault 
-    - ssh auth method 
+- HCP Vault
+    - ssh auth method
     - kvv2 to store the public key in
-- HCP Boundary 
-    - test org 
+- HCP Boundary
+    - test org
     - project
     - host catalog
     - credential store
     - test users
-- Terraform 
+- Terraform
     - 3 x Workspaces
 - Packer
     - Project
@@ -24,20 +24,20 @@ This configures:
 ## Flow:
 Github actions drives:
 - Terraform sets up SSH auth method, setup a kvv2 store and store the private key in it
-- Vault action retrieves private key for use in action pipeline 
+- Vault action retrieves private key for use in action pipeline
 - Packer builds image containing SSH private key for SSH ca auth
 - Image is uploaded/dated in AWS AMI store
 - Terraform sets up Boundary and Vault cred association
-- Terraform Boundary credentials store 
+- Terraform Boundary credentials store
 - Terraform setups Boundary users
 - Terraform setup some t2 micro ec2's for testing
 
 ## Setup / Use:
 - Fork the repository
-- Setup the [Github actions secrets](https://docs.github.com/en/actions/security-guides/using-secrets-in-github-actions#creating-secrets-for-a-repository) 
+- Setup the [Github actions secrets](https://docs.github.com/en/actions/security-guides/using-secrets-in-github-actions#creating-secrets-for-a-repository)
 - push (PR) a minor change to the repo
 - watch action for completion
-- you will be able to boundary auth then ssh to one of your AWS instances 
+- you will be able to boundary auth then ssh to one of your AWS instances
 
 # AWS setup:
 - Create [Github actions secrets](https://docs.github.com/en/actions/security-guides/using-secrets-in-github-actions#creating-secrets-for-a-repository) for:
@@ -75,7 +75,7 @@ In addition to the secrets you also need to setup the following Github action [v
     - VAULT_ADDR
     - VAULT_TOKEN
 
-note: 
+note:
 You need an orphaned token for Terraform to use for this. To create it use the following and if not testing, set the policy appropriately:
 ```
 NAMESPACE=admin vault token create -policy=hcp-root -period=1440h -orphan
@@ -90,8 +90,8 @@ NAMESPACE=admin vault token create -policy=hcp-root -period=1440h -orphan
     - BOUNDARY_ADDR
     - BOUNDARY_PASS
     - BOUNDARY_USER
-    
-note: 
+
+note:
 The boundary user needs to be root or have root equivalent permissions
 
 ## Boundary workflow
@@ -111,4 +111,4 @@ boundary connect ssh -host-id <host id> -target-id <target id> -keyring-type="se
 - Setup session recording
 
 ## Acknowledgements:
-Ram.
+Ram..
