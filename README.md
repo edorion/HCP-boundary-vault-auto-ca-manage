@@ -33,6 +33,7 @@ Github actions drives:
 - Terraform setup some t2 micro ec2's for testing
 - AWX has the inventory added to it and tests connectivity
 
+
 ## Setup / Use:
 - Fork the repository
 - Setup the [Github actions secrets](https://docs.github.com/en/actions/security-guides/using-secrets-in-github-actions#creating-secrets-for-a-repository)
