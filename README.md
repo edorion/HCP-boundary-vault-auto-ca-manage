@@ -20,6 +20,8 @@ This configures:
     - Version
 - AWS
     - 3 x t2 micro EC2's built with packer AMI
+- AWX
+    - Pings OK
 
 ## Flow:
 Github actions drives:
