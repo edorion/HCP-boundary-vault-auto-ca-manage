@@ -19,8 +19,7 @@ YAML
 }
 
 ######## kick of provision job ######
-resource "awx_job_template_launch" "boundary"
-{
+resource "awx_job_template_launch" "boundary" {
     job_template_id = "9"
     inventory_id = resource.awx_inventory.default.id
 }
