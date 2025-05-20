@@ -31,6 +31,7 @@ Github actions drives:
 - Terraform Boundary credentials store
 - Terraform setups Boundary users
 - Terraform setup some t2 micro ec2's for testing
+- AWX has the inventory added to it and tests connectivity
 
 ## Setup / Use:
 - Fork the repository
