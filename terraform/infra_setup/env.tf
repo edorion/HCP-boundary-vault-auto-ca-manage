@@ -22,3 +22,9 @@ variable "HCP_CHANNEL_NAME" {
 variable "HCP_VERSIONFINGERPRINT" {
   type = string
 }
+variable "AWX_TOKEN" {
+  type = string
+}
+variable "AWX_ADDR" {
+  type = string
+}

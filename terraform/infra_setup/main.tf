@@ -2,11 +2,15 @@ terraform {
   required_providers {
     aws = {
       source  = "hashicorp/aws"
-      version = "~> 5.38.0"
+      version = "~> 5.98.0"
     }
     hcp = {
       source  = "hashicorp/hcp"
-      version = "~> 0.83.0"
+      version = "~> 0.106.0"
+    }
+    awx = {
+      source = "killmeplz/awx"
+      version = "0.0.6"
     }
   }
 }
@@ -20,4 +24,9 @@ provider "aws" {
 provider "hcp" {
   client_id     = var.HCP_CLIENT_ID
   client_secret = var.HCP_CLIENT_SECRET
+}
+
+provider "awx" {
+  token = var.AWX_TOKEN
+  host = var.AWX_ADDR
 }
