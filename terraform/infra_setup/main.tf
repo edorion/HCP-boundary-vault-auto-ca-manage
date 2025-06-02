@@ -8,10 +8,10 @@ terraform {
       source  = "hashicorp/hcp"
       version = "~> 0.106.0"
     }
-#    awx = {
-#      source = "killmeplz/awx"
-#      version = "0.0.6"
-#    }
+    awx = {
+      source = "killmeplz/awx"
+      version = "0.0.6"
+    }
   }
 }
 
@@ -26,7 +26,7 @@ provider "hcp" {
   client_secret = var.HCP_CLIENT_SECRET
 }
 
-#provider "awx" {
-#  token = var.AWX_TOKEN
-#  host = var.AWX_ADDR
-#}
+provider "awx" {
+  token = var.AWX_TOKEN
+  host = var.AWX_ADDR
+}
